@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa - Turystyka</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/map.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Turystyka</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Strona główna</a></li>
+                    <li><a href="about.html">O nas</a></li>
+                    <li><a href="gallery.html">Galeria</a></li>
+                    <li><a href="calculator.html">Kalkulator</a></li>
+                    <li><a href="map.html">Mapa</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2>Mapa</h2>
+            <img id="scream" src="photo123.jpg" alt="The Scream" width="220" height="277">
+<p>Canvas to fill:</p>
+            <canvas id="myCanvas" width="660" height="642" style="border:1px solid #d3d3d3;">
+                Your browser does not support the HTML canvas tag.</canvas>
+                <p><button onclick="myCanvas()">Try it</button></p>
+                <script>
+                function myCanvas() {
+                 var c = document.getElementById("myCanvas");
+                 var ctx = c.getContext("2d");
+                 var img = document.getElementById("scream");
+                 ctx.drawImage(img,10,10);
+                }
+                </script>
+        </main>
+        <footer>
+            <p>&copy; 2024 Turystyka</p>
+            <p id="date-time"></p>
+        </footer>
+    </div>
+</body>
+</html>

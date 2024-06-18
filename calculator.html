@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Turystyka</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Turystyka</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Strona główna</a></li>
+                    <li><a href="about.html">O nas</a></li>
+                    <li><a href="gallery.html">Galeria</a></li>
+                    <li><a href="calculator.html">Kalkulator</a></li>
+                    <li><a href="map.html">Mapa</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            
+           
+            <div class="container">
+                <h1>Kalkulator wycieczki do egiptu</h1>
+                <h2>Podróż do Afryki</h2>
+                <p>
+                    Celem podróży jest zwiedzenie:Piramidy w Gizie, Wielki Sfinks, Piramidy w Sakkarze,Luksor i Świątynia Amona w Karnaku, Dolina Królów,Świątynia Hatszepsut
+                    Asuan, File i Elefantyna, Świątynie w Abu Simbel, Klasztor Św. Katarzyny,Meczet i Uniwersytet Al Azhar. Wycieczka bedzie trwała 4 dni.
+                </p>
+                <form id="calcForm">
+                    Ilość osób dorosłych(400zł/os):
+                    <input type="number" id="num1" placeholder="osoba dorosla"><br/><br/>
+                    Ilość dzieci(200zł/os):
+                    <input type="number" id="num2" placeholder="dziecko">
+                    <br/><br/>
+                    <button type="button" onclick="calculate()">Oblicz</button>
+                </form>
+                <div class="result" id="result"></div>
+            </div>
+            
+            <script>
+                function calculate() {
+                    // Pobierz wartości z pól tekstowych
+                    const num1 = parseFloat(document.getElementById('num1').value);
+                    const num2 = parseFloat(document.getElementById('num2').value);
+            
+                    // Sprawdź, czy obie wartości są liczbami
+                    
+                        if (isNaN(num1) || isNaN(num2)) {
+                      document.getElementById('result').textContent = 'Proszę wprowadzić dwie liczby.';
+                        } else if (num1 <= 0 || num2 <= 0) {
+                     document.getElementById('result').textContent = 'Proszę wprowadzić liczby dodatnie.';
+                     
+                    } else {
+                        // Oblicz wynik
+                        const result = (num1 * 400) + (num2 * 200);
+                        // Wyświetl wynik
+                        document.getElementById('result').textContent = 'Wynik(zł): ' + result;
+                    }
+                }
+            </script>
+        </main>
+        <footer>
+            <p>&copy; 2024 Turystyka</p>
+            <p id="date-time"></p>
+        </footer>
+    </div>
+    <script src="js/script.js" defer></script>
+</body>
+</html>
